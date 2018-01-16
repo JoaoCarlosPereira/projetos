@@ -1,0 +1,60 @@
+unit Conector;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, Vcl.ComCtrls, Vcl.ExtCtrls;
+
+type
+  TFrmConexao = class(TForm)
+    PnlArea: TPanel;
+    PageControl: TPageControl;
+    Tbs_Front: TTabSheet;
+    Tbs_Firebird: TTabSheet;
+    Tbs_Postgres: TTabSheet;
+    Panel1: TPanel;
+    Panel2: TPanel;
+    BtnPostgres: TBitBtn;
+    BtnFirebird: TBitBtn;
+    Panel3: TPanel;
+    Panel4: TPanel;
+    EdtIPFirebird: TLabeledEdit;
+    EdtDiretorioFirebird: TLabeledEdit;
+    EdtNomeFireBird: TLabeledEdit;
+    Panel7: TPanel;
+    Panel8: TPanel;
+    EdtIPostgres: TLabeledEdit;
+    EdtNomePostgres: TLabeledEdit;
+    BtnGerarFirebird: TButton;
+    BtnFecharFirebird: TButton;
+    BtnFecharPostgres: TButton;
+    BtnGerarPostgres: TButton;
+    EdtDestinoFirebird: TLabeledEdit;
+    EdtDestinoPostgres: TLabeledEdit;
+    procedure BtnPostgresClick(Sender: TObject);
+    procedure BtnFirebirdClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmConexao: TFrmConexao;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFrmConexao.BtnFirebirdClick(Sender: TObject);
+begin
+  PageControl.ActivePage := Tbs_Firebird;
+end;
+
+procedure TFrmConexao.BtnPostgresClick(Sender: TObject);
+begin
+  PageControl.ActivePage := Tbs_Postgres;
+end;
+
+end.
